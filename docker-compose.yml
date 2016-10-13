@@ -1,0 +1,13 @@
+version: '2'
+services:
+  minecraft-server:
+    container_name: minecraft
+    image: itzg/minecraft-server
+    ports:
+      - "25565:25565"
+    volumes:
+      - /Users/tiao/Dropbox/minecraft-server/data:/data
+    environment:
+      EULA: "true"
+      ICON: "http://www.gravatar.com/avatar/3a282cbe067184bb333ee4010a29db19?s=300"
+      MOTD: "Louis' Humble Little Server"
