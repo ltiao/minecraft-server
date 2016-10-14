@@ -1,0 +1,35 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: minecraft-server
+  labels:
+    run: minecraft-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: minecraft-server
+  template:
+    metadata:
+      labels:
+        run: minecraft-server
+    spec:
+      containers:
+      - name: minecraft-server
+        image: itzg/minecraft-server
+        ports:
+        - containerPort: 25565
+        env:
+        - name: EULA
+          value: "true"
+        - name: ICON
+          value: "http://www.gravatar.com/avatar/3a282cbe067184bb333ee4010a29db19?s=300"
+        - name: MOTD
+          value: "Louis' Humble Little Server"
+        volumeMounts:
+        - name: data-volume
+          mountPath: /data
+      volumes:
+      - name: data-volume
+        hostPath:
+          path: /Users/tia00c/Dropbox/minecraft-server/data
