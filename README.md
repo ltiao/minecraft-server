@@ -1,5 +1,15 @@
 # minecraft-server
 
+## Docker
+
+## Docker Compose
+
+```console
+$ docker-compose up
+```
+
+## Kubernetes
+
 Initialized artifacts with:
 
 ```console
@@ -9,6 +19,14 @@ $ kubectl run minecraft-server --image=itzg/minecraft-server \
 ```
 
 ```console
-$ kubectl expose deployment minecraft-server --type=LoadBalancer \
->                                            --dry-run -o yaml > minecraft-server-service.yaml
+$ kubectl expose deployment minecraft-server --type=LoadBalancer --dry-run \
+>                                            -o yaml > minecraft-server-service.yaml
+```
 
+```console
+$ kubectl create -f k8s
+```
+
+```console
+$ kubectl delete -f k8s
+```
