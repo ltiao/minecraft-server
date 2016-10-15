@@ -9,5 +9,7 @@ services:
       - /Users/tiao/Dropbox/minecraft-server/data:/data
     environment:
       EULA: "true"
-      ICON: "http://www.gravatar.com/avatar/3a282cbe067184bb333ee4010a29db19?s=300"
+      ICON: "http://icons.iconarchive.com/icons/dakirby309/simply-styled/128/Minecraft-icon.png"
       MOTD: "Louis' Humble Little Server"
+      OPS: "louis_n00b,Jemmouse"
+      SEED: 8391080547765715760
