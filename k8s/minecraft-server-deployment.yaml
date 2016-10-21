@@ -16,20 +16,33 @@ spec:
     spec:
       containers:
       - name: minecraft-server
-        image: itzg/minecraft-server
+        image: tiao/minecraft:ftb-infinity-2.6.0
         ports:
         - containerPort: 25565
         env:
         - name: EULA
           value: "true"
-        - name: ICON
-          value: "http://www.gravatar.com/avatar/3a282cbe067184bb333ee4010a29db19?s=300"
         - name: MOTD
           value: "Louis' Humble Little Server"
+        - name: LEVEL_TYPE
+          value: "BIOMESOP"
+        - name: DIFFICULTY
+          value: "hard"
+        - name: FORCE_GAMEMODE
+          value: "false"
+        - name: ICON
+          value: "http://icons.iconarchive.com/icons/dakirby309/simply-styled/128/Minecraft-icon.png"
+        - name: OPS
+          value: "louis_n00b,lb_2600"
+        - name: WHITELIST
+          value: "Jemmouse"
+        - name: SEED
+          value: statbadgers
         volumeMounts:
         - name: data-volume
           mountPath: /data
       volumes:
       - name: data-volume
-        hostPath:
-          path: /Users/tia00c/Dropbox/minecraft-server/data
+        gcePersistentDisk:
+          pdName: minecraft-disk
+          fsType: ext4
