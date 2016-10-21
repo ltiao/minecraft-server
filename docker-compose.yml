@@ -2,14 +2,18 @@ version: '2'
 services:
   minecraft-server:
     container_name: minecraft
-    image: itzg/minecraft-server
+    image: tiao/minecraft:ftb-infinity-2.6.0
     ports:
-      - "25565:25565"
+    - "25565:25565"
     volumes:
-      - /Users/tiao/Dropbox/minecraft-server/data:/data
+    - /Users/tiao/Dropbox/minecraft-server/data:/data
     environment:
       EULA: "true"
-      ICON: "http://icons.iconarchive.com/icons/dakirby309/simply-styled/128/Minecraft-icon.png"
       MOTD: "Louis' Humble Little Server"
-      OPS: "louis_n00b,Jemmouse"
-      SEED: 8391080547765715760
+      LEVEL_TYPE: "BIOMESOP"
+      DIFFICULTY: "hard"
+      FORCE_GAMEMODE: "false"
+      ICON: "http://icons.iconarchive.com/icons/dakirby309/simply-styled/128/Minecraft-icon.png"
+      OPS: "louis_n00b,lb_2600"
+      WHITELIST: "Jemmouse"
+      SEED: statbadgers
