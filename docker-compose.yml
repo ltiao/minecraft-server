@@ -6,7 +6,7 @@ services:
     ports:
       - "25565:25565"
     volumes:
-      - /Users/tiao/Dropbox/minecraft-server/data:/data
+      - /Users/tiao/Dropbox/minecraft-server/data_bak:/data
     environment:
       EULA: "true"
       ICON: "http://icons.iconarchive.com/icons/dakirby309/simply-styled/128/Minecraft-icon.png"
