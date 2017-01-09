@@ -6,6 +6,7 @@ RUN wget -q -O FTBInfinityServer.zip ${FTB_DOWNLOAD_URL} \
  && unzip -q -d /tmp/FTBInfinityServer FTBInfinityServer.zip
 
 COPY server.properties /tmp/server.properties
+COPY ServerStart.sh /tmp/ServerStart.sh
 
 RUN groupadd -r minecraft && useradd -r -g minecraft minecraft
 
