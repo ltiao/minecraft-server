@@ -6,9 +6,9 @@ metadata:
     run: minecraft-server
 spec:
   ports:
-  - port: 25565
-    protocol: TCP
+  - protocol: TCP
     targetPort: 25565
+    port: 25565
   selector:
     run: minecraft-server
   type: LoadBalancer

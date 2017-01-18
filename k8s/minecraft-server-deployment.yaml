@@ -16,28 +16,10 @@ spec:
     spec:
       containers:
       - name: minecraft-server
-        image: lmccalman/minecraft-ftb
+        image: tiao/mc
+        command: java
         ports:
         - containerPort: 25565
-        env:
-        - name: EULA
-          value: "true"
-        - name: MOTD
-          value: "Louis' Humble Little Server"
-        - name: LEVEL_TYPE
-          value: "BIOMESOP"
-        - name: DIFFICULTY
-          value: "hard"
-        - name: FORCE_GAMEMODE
-          value: "false"
-        - name: ICON
-          value: "http://icons.iconarchive.com/icons/dakirby309/simply-styled/128/Minecraft-icon.png"
-        - name: OPS
-          value: "louis_n00b,lb_2600"
-        - name: WHITELIST
-          value: "Jemmouse"
-        - name: SEED
-          value: "statbadgers"
         volumeMounts:
         - name: data-volume
           mountPath: /data
